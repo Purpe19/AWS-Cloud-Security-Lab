@@ -85,3 +85,58 @@ This screenshot shows three IAM users created for role-based access testing:
 - Security-analyst-lab
 
 Each user represents a different job function. This lab demonstrates least privilege by separating access based on role instead of giving every user administrator access.
+
+### IAM User Groups Created
+
+This screenshot shows three IAM user groups created for role-based access control:
+
+- auditor-lab
+- Developers
+- SecurityAnalystss
+
+Each group represents a job function. Permissions should be attached to groups instead of directly giving every user administrator access. This makes access easier to manage and supports the principle of least privilege.
+
+The IAM design used in this lab follows this structure:
+
+```text
+User → Group → Permission
+```
+
+Example:
+
+```text
+auditor-lab user → auditor-lab group → audit/read-only permissions
+developer-user → Developers group → limited developer permissions
+Security-analyst-lab → SecurityAnalystss group → security/log review permissions
+```
+
+### IAM Group Permission Policy
+
+This screenshot shows an AWS managed policy attached to an IAM group:
+
+- Policy: AmazonS3ReadOnlyAccess
+- Type: AWS managed policy
+
+This policy gives read-only access to Amazon S3. Users in this group can view S3 resources, but they should not be able to create, upload, delete, or modify S3 resources.
+
+This is an example of least privilege because the group receives only the access needed for review or analysis instead of full administrator access.
+
+```text
+User → Group → AmazonS3ReadOnlyAccess → Read-only S3 permission
+```
+
+### IAM Permission Screenshots
+
+These screenshots show the permission policies attached to the IAM groups used in this lab:
+
+- Auditor group permission
+- Developer group permission
+- Security Analyst group permission
+
+This demonstrates role-based access control in AWS IAM. Each group receives permissions based on job function instead of giving all users administrator access.
+
+```text
+User → Group → Permission Policy
+```
+
+This supports least privilege by separating access for audit, development, and security analysis tasks.

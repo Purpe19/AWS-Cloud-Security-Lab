@@ -70,3 +70,18 @@ Screenshots for this lab should be stored in:
 
 ```text
 02-IAM/screenshots/
+
+## IAM users Created 
+These Screenshots shows 3 IAM users have been created for role-based testing: 
+- auditor-lab  ---- To practice read-only/compliance access
+-developer-user ----- To practice limited developer access
+-Security-analyst-lab ---- To practice cloud security analyst access
+### IAM Users Created
+
+This screenshot shows three IAM users created for role-based access testing:
+
+- auditor-lab
+- developer-user
+- Security-analyst-lab
+
+Each user represents a different job function. This lab demonstrates least privilege by separating access based on role instead of giving every user administrator access.
